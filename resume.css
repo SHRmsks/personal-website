@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/*body text font */
+
+* {
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.banner {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+/*the banner container*/
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('pictures /banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.bannereffect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-bottom: 20px solid rgba(14, 92, 147, 0.9);
+    z-index: 1;
+}
+
+/* make sure the elements inside are aligned vertically and centralized*/
+
+.bannereffect h1 {
+    position: absolute;
+    text-align: center;
+    font-family: "Cyberpunk";
+    font-size: calc(20px + 2vw);
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to right, #aaa2e1, #00ffb3);
+    background-clip: text;
+    border-radius: 10px;
+    box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.9);
+}
+
+.buttoncontainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 100%;
+    position: absolute;
+}
+
+/*define the container as flex model, make sure all the elements inside is space-evenly and 
+attach bottom as we want */
+.buttoncontainer button {
+    justify-content: center;
+    align-items: center;
+    min-width: calc(90px + 1vw);
+    height: calc(12px + 1vw);
+    color: #b8ebb1;
+    background: linear-gradient(to bottom right, #eb7f7f, #158974);
+    opacity: 80%;
+    border-radius: 25px;
+    box-shadow: 0px 3px 8px 0px rgba(19, 18, 18, 0.3);
+    padding: 2px;
+
+
+}
+
+/* centralize the button icon, box shadow and color*/
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 13px 0px rgba(19, 18, 18, 0.8);
+    transition: all .3s ease-in-out;
+}
+
+/*button hover include box shadow and popping out */
+section {
+    display: block;
+    position: relative;
+    width: 90%;
+    min-height:100vh;
+    margin-top: 20px;
+    z-index: 0;
+    padding-left: 10%;
+
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, #233288, #be10dd);
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* the body pesudo and real body paragraph, to make sure the container has base color and not over the content */
+
+section p {
+    position: relative;
+    font-family: 'Josefin Sans';
+    font-size: calc(0.04em + 1vw );
+    color: rgb(237, 221, 44);
+    line-height: 1.4;
+}
+
+section h2, h3, h4 {
+    font-family: 'Cyberpunk';
+    font-size: calc(1em + 0.9vw);
+    color: rgb(52, 224, 230);
+    line-height: 2;
+}
+
+section .headshot {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 20%;
+    height: 200%;
+    right: 5%;
+    left: 75%;
+}
+
+.headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+
+.icon img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.icon {
+    width: 40%;
+    height: 60px;
+    display: inline-flex;
+    gap: 7%;
+    margin-top: 0.8em;
+}
+
+.icon button, .ins, .wechat{
+    position: relative;
+    padding: 0;
+    mix-blend-mode: multiply;
+    display: inline-flex;
+    width: 53px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: none;
+
+}
+
+.ins:hover #inspic, .wechat:hover #wxpic {
+    opacity: 0;
+}
+
+
+.ins:hover #shr, .wechat:hover #shrwx{
+    transform: scale(4);
+    opacity: 1;
+}
+
+p.covering, button.covering {
+    opacity: 0.3;
+}
+
+.ins #inspic, .wechat #wxpic{
+    position: relative;
+    z-index: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+.ins #shr, .wechat #shrwx {
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.9s ease-in-out, transform 1.9s ease-in-out;
+}/* ins effects */
+
+section> .edu{
+    display: grid;
+    position: relative;
+    width:100%;
+    height: 19em;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 33%));
+    grid-gap: 5%;
+}
+
+.edu .BU, .edu .undecided{
+    display: flex;
+    position: relative ;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    transition: all .4s ease-in-out;
+    z-index: 1;
+   
+}
+.BU::after, .undecided::after{
+    content:"";
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: rgb(103, 160, 164);
+    border-radius: 30px;
+    opacity: 0;
+    z-index: 2;
+    transition: all .5s ease-in-out;
+} 
+/* pesuedo layer of .BU with black overlay, z-index is 2 */
+
+.BU #bu, .undecided #undecided{
+    display: block;
+    position: relative;
+    width:100%; 
+    height:auto; 
+    z-index: 1;  
+    mix-blend-mode: multiply;
+    transition: all .5s ease-in-out;
+}
+
+.BU:hover #bu, .undecided:hover #undecided{
+    transform:scale(1.1);
+    opacity: 0.4;
+}   
+.BU:hover::after, .undecided:hover::after{
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+.BU:hover p, .undecided:hover p{
+    opacity: 1;
+}
+.BU p, .undecided p{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index:3;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
